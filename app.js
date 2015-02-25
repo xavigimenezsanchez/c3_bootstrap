@@ -3,6 +3,11 @@ var MiddleEarth = function() {
     this.contenidor = document.getElementById('dades');
     
     /********* Starter *************/
+   this.start();
+    
+};
+
+MiddleEarth.prototype.start = function() {
     var jumbotron = document.createElement('div');
     jumbotron.setAttribute('class','jumbotron');
     var h1 = document.createElement('h1');
@@ -11,10 +16,10 @@ var MiddleEarth = function() {
     p.innerHTML = "Informació sobre els temes més punyents que han ocorregut en les diferents èpoques a la Terra Mitjana";
     jumbotron.appendChild(h1);
     jumbotron.appendChild(p);
+    this.contenidor.innerHTML = "";
+    this.inici = true;
     this.contenidor.appendChild(jumbotron);
-    
 };
-
 MiddleEarth.prototype.panelScaffolding = function(titol,id,columns) {
     var col = document.createElement('div');
     var panel = document.createElement('div');
@@ -227,3 +232,6 @@ document.getElementById('fourth').addEventListener('click',function(){
 });
 
 
+document.getElementById('home').addEventListener('click',function(){
+    administrator.start();
+});
